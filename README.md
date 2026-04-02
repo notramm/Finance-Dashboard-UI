@@ -1,83 +1,143 @@
-# 🚀 Premium Personal Finance Dashboard
+<div align="center">
+  <h1>Velora Finance Dashboard</h1>
+  <p><strong>Elegant • Intelligent • Role-Based</strong> Personal Finance Dashboard</p>
 
-A high-performance, professional personal finance management application built with React and Tailwind CSS. Designed for a frontend developer internship assessment, focusing on code quality, exceptional UX, and modern aesthetics.
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Recharts-00C4B4?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue" />
+  <img src="https://img.shields.io/badge/Context_API-764ABC?style=for-the-badge" />
+</div>
 
-![Dashboard Preview](https://via.placeholder.com/1200x600/0f172a/3b82f6?text=Personal+Finance+Dashboard+UI)
+---
 
-## ✨ Features
+## 🚀 About the Project
 
-### 1. Dashboard Overview
-- **Real-time Summaries**: Total Balance, Income, Expenses, and Savings Rate with dynamic icons and trend indicators.
-- **Interactive Charts**:
-  - **Balance Trend**: Shaded Area Chart showing 6-month financial trajectory.
-  - **Spending Breakdown**: Donut Chart for categorical expense analysis.
-- **Micro-Animations**: Staggered entry animations for cards and smooth chart transitions.
+**Velora Finance Dashboard** is a modern, high-performance personal finance dashboard built to deliver **clarity, insights, and control over financial data**.
 
-### 2. Transaction Management
-- **Smart Filtering**: Filter by type (Income/Expense) or specific category (Food, Bills, etc.).
-- **Global Search**: Search by description or category instantly.
-- **Admin Control**: Role-based UI allowing Admins to Add, Edit, and Delete transactions.
-- **Data Export**: Export your full transaction history as a CSV file for external analysis.
+Designed with a strong focus on **UI/UX, performance, and real-world usability**, it showcases production-level frontend architecture with role-based interactions and interactive data visualization.
 
-### 3. Role-Based UI (RBAC)
-- **Viewer Role**: Read-only access to charts and lists.
-- **Admin Role**: Full CRUD capabilities with dedicated action buttons and modals.
-- **Instant Toggle**: Switch roles via the Navbar to instantly update the UI state.
+---
 
-### 4. Advanced Insights
-- **Smart Analysis**: Automatic detection of highest spending categories.
-- **MoM Comparison**: Month-over-month trend analysis with percentage differences.
-- **Data-Driven Tips**: Adaptive motivational messages based on your savings performance.
+## 🎥 Demo Preview
 
-### 5. UI/UX Excellence
-- **Dual Theme**: Premium dark/light mode with persistence.
-- **Glassmorphism**: Modern frosted-glass effects on cards and navigation.
-- **Fully Responsive**: Optimized for Mobile, Tablet, and Desktop displays.
-- **Premium Components**: Custom-built StatCards, Modals, and Form controls.
+<p align="center">
+  <img src="./assets/demo.gif" alt="Velora Demo" width="100%" />
+</p>
 
-## 🛠️ Tech Stack
+> 📌 *Tip: Replace this with your actual screen recording GIF*
 
-- **Framework**: [React](https://reactjs.org/) (Hooks & Context API)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Charts**: [Recharts](https://recharts.org/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Date Utilities**: [date-fns](https://date-fns.org/)
+---
 
-## 🚀 Getting Started
+## ✨ Key Features
 
-### Prerequisites
-- Node.js (v18.0.0 or higher)
-- npm or yarn
+### 📊 Dashboard Insights
 
-### Installation
+* Real-time summary cards (Balance, Income, Expenses, Savings)
+* 6-month financial trend visualization
+* Category-wise spending breakdown
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Sanjana-SD/Finance-Dashboard-UI.git
-   cd Finance-Dashboard-UI
-   ```
+### 📁 Transaction Management
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+* Smart search & filtering (type/category)
+* CSV export support
+* Clean tabular UI with sorting
 
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
+### 🔐 Role-Based Access
 
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
+* **Viewer** → Read-only dashboard
+* **Admin** → Full control (Add/Edit/Delete)
+* Instant UI updates on role switch
 
-## 🔐 Role Switching Instructions
+### 🧠 Smart Analytics
 
-1. Locate the **Role Switcher** in the Top Navbar.
-2. Click on **Viewer** or **Admin** to toggle permissions.
-3. Observe how the "Add Transaction" and table "Actions" (Edit/Delete) appear/disappear instantly.
+* Top spending categories detection
+* Month-over-Month comparisons
+* Adaptive financial insights
 
-## 📄 License
-This project is for assessment purposes only.
+### 🎨 UI/UX Excellence
+
+* Dark / Light mode
+* Glassmorphism UI design
+* Fully responsive (Mobile → Desktop)
+* Smooth animations (Framer Motion)
+
+---
+
+## 🛠 Tech Stack
+
+* **React** (Hooks + Context API)
+* **Tailwind CSS**
+* **Recharts**
+* **Framer Motion**
+* **Lucide React**
+* **date-fns**
+
+---
+
+## ⚡ Run Locally
+
+```bash
+git clone https://github.com/notramm/Finance-Dashboard-UI.git
+cd finance-dashboard-ui
+
+npm install
+npm run dev
+```
+
+---
+
+## 🏗 Build
+
+```bash
+npm run build
+```
+
+---
+
+## 🔄 Role Switching
+
+Use the Navbar toggle to switch between:
+
+* 👁 Viewer Mode
+* ⚙️ Admin Mode
+
+UI updates instantly based on permissions.
+
+---
+
+## 📊 Feature Coverage
+
+| Feature                                 | Status |
+| --------------------------------------- | ------ |
+| Dashboard Summary + Charts              | ✅ Done |
+| Donut Chart Visualization               | ✅ Done |
+| Transactions (Search + Filter + Export) | ✅ Done |
+| Role-Based Access                       | ✅ Done |
+| Insights & Analytics                    | ✅ Done |
+| Responsive UI                           | ✅ Done |
+| Animations                              | ✅ Done |
+
+---
+
+## 🌟 What Makes This Project Stand Out
+
+* Production-level UI/UX design
+* Clean and scalable component architecture
+* Real-world dashboard experience
+* Focus on performance + usability
+* Strong attention to detail (animations, states, edge cases)
+
+---
+
+## 📌 Final Note
+
+This project reflects my ability to build **modern, scalable, and visually polished frontend applications** with real-world usability.
+
+I have complete ownership of the codebase and can confidently explain or extend any part of the system.
+
+---
+
+<p align="center">
+  Built with precision • Designed for impact 🚀
+</p>
