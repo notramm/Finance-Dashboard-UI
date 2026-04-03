@@ -22,7 +22,7 @@ Designed with a strong focus on **UI/UX, performance, and real-world usability**
 ## 🎥 Demo Preview
 
 <p align="center">
-  <img src="./assets/animation.gif" alt="Velora Demo" width="100%" />
+  <img src="./assets/Animation.gif" alt="Velora Demo" width="100%" />
 </p>
 
 ---
