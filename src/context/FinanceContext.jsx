@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { MOCK_TRANSACTIONS } from '../data/mockData';
-import { startOfMonth, subMonths, isSameMonth } from 'date-fns';
 
 const FinanceContext = createContext();
 
@@ -11,16 +10,16 @@ export const useFinance = () => {
 };
 
 export const FinanceProvider = ({ children }) => {
-  const [role, setRole] = useState(() => localStorage.getItem('finance-role') || 'viewer');
+  const [role, setRole] = useState(() => localStorage.getItem('velora-role') || 'viewer');
 
   const [transactions, setTransactions] = useState(() => {
-    const saved = localStorage.getItem('finance-transactions');
+    const saved = localStorage.getItem('velora-transactions');
     return saved ? JSON.parse(saved) : MOCK_TRANSACTIONS;
   });
 
-  // Always default to light theme
+  // Always default to light
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('finance-theme') || 'light';
+    return localStorage.getItem('velora-theme') || 'light';
   });
 
   const [filters, setFilters] = useState({
@@ -28,14 +27,22 @@ export const FinanceProvider = ({ children }) => {
     type: 'all',
     category: 'all',
     sortBy: 'date',
-    sortOrder: 'desc'
+    sortOrder: 'desc',
   });
 
-  useEffect(() => { localStorage.setItem('finance-role', role); }, [role]);
-  useEffect(() => { localStorage.setItem('finance-transactions', JSON.stringify(transactions)); }, [transactions]);
-
+  // Persist role
   useEffect(() => {
-    localStorage.setItem('finance-theme', theme);
+    localStorage.setItem('velora-role', role);
+  }, [role]);
+
+  // Persist transactions
+  useEffect(() => {
+    localStorage.setItem('velora-transactions', JSON.stringify(transactions));
+  }, [transactions]);
+
+  // Persist + apply theme
+  useEffect(() => {
+    localStorage.setItem('velora-theme', theme);
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -43,9 +50,10 @@ export const FinanceProvider = ({ children }) => {
     }
   }, [theme]);
 
-  // Apply initial theme on mount
+  // Apply theme on first mount
   useEffect(() => {
-    if (theme === 'dark') {
+    const saved = localStorage.getItem('velora-theme') || 'light';
+    if (saved === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -53,11 +61,20 @@ export const FinanceProvider = ({ children }) => {
   }, []);
 
   const stats = useMemo(() => {
-    const income = transactions.filter(t => t.type === 'income').reduce((s, t) => s + t.amount, 0);
-    const expenses = transactions.filter(t => t.type === 'expense').reduce((s, t) => s + t.amount, 0);
+    const income = transactions
+      .filter(t => t.type === 'income')
+      .reduce((s, t) => s + t.amount, 0);
+    const expenses = transactions
+      .filter(t => t.type === 'expense')
+      .reduce((s, t) => s + t.amount, 0);
     const balance = income - expenses;
     const savingsRate = income > 0 ? ((income - expenses) / income) * 100 : 0;
-    return { totalIncome: income, totalExpenses: expenses, balance, savingsRate: savingsRate.toFixed(1) };
+    return {
+      totalIncome: income,
+      totalExpenses: expenses,
+      balance,
+      savingsRate: savingsRate.toFixed(1),
+    };
   }, [transactions]);
 
   const addTransaction = (transaction) => {
@@ -65,7 +82,7 @@ export const FinanceProvider = ({ children }) => {
     setTransactions(prev => [{
       ...transaction,
       id: Date.now().toString(),
-      date: transaction.date || new Date().toISOString()
+      date: transaction.date || new Date().toISOString(),
     }, ...prev]);
   };
 
@@ -85,17 +102,17 @@ export const FinanceProvider = ({ children }) => {
   const signOut = () => {
     setRole('viewer');
     setTheme('light');
-    localStorage.removeItem('finance-role');
-    localStorage.removeItem('finance-transactions');
-    localStorage.removeItem('finance-theme');
+    localStorage.removeItem('velora-role');
+    localStorage.removeItem('velora-transactions');
+    localStorage.removeItem('velora-theme');
     window.location.reload();
   };
 
   return (
     <FinanceContext.Provider value={{
       role, transactions, theme, filters, stats,
-      setFilters, addTransaction, updateTransaction, deleteTransaction,
-      toggleRole, toggleTheme, signOut
+      setFilters, addTransaction, updateTransaction,
+      deleteTransaction, toggleRole, toggleTheme, signOut,
     }}>
       {children}
     </FinanceContext.Provider>

@@ -15,7 +15,7 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTransaction, setEditingTransaction] = useState(null);
-  const { role, theme } = useFinance();
+  const { theme } = useFinance();
 
   const handleEditTransaction = (transaction) => {
     setEditingTransaction(transaction);
@@ -30,7 +30,7 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <DashboardOverview />;
+        return <DashboardOverview setActiveTab={setActiveTab} />;
       case 'transactions':
         return (
           <div className="space-y-5">
@@ -45,6 +45,7 @@ function App() {
                 Track and manage every cent of your activity.
               </p>
             </div>
+            {/* FilterBar has export + add transaction here */}
             <FilterBar onAddClick={handleAddTransaction} />
             <TransactionList onEditClick={handleEditTransaction} />
           </div>

@@ -17,7 +17,6 @@ export const Modal = ({ isOpen, onClose, title, children }) => {
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,8 +25,6 @@ export const Modal = ({ isOpen, onClose, title, children }) => {
           className="absolute inset-0"
           style={{ backgroundColor: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}
         />
-
-        {/* Modal */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -41,27 +38,20 @@ export const Modal = ({ isOpen, onClose, title, children }) => {
             boxShadow: '0 24px 48px rgba(0,0,0,0.2)',
           }}
         >
-          {/* Header */}
-          <div
-            className="flex items-center justify-between px-6 py-4"
-            style={{ borderBottom: `1px solid ${isDark ? '#1e3a5f' : '#f1f5f9'}` }}
-          >
+          <div className="flex items-center justify-between px-6 py-4"
+            style={{ borderBottom: `1px solid ${isDark ? '#1e3a5f' : '#f1f5f9'}` }}>
             <h2 className="text-base font-bold" style={{ color: 'var(--foreground)' }}>{title}</h2>
             <button
               onClick={onClose}
               className="p-1.5 rounded-lg transition-colors"
               style={{ color: '#94a3b8' }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = isDark ? '#0f1e35' : '#f1f5f9'; e.currentTarget.style.color = 'var(--foreground)'; }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#94a3b8'; }}
+              onMouseEnter={e => { e.currentTarget.style.backgroundColor = isDark ? '#0f1e35' : '#f1f5f9'; }}
+              onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; }}
             >
               <X size={18} />
             </button>
           </div>
-
-          {/* Body */}
-          <div className="p-6">
-            {children}
-          </div>
+          <div className="p-6">{children}</div>
         </motion.div>
       </div>
     </AnimatePresence>
