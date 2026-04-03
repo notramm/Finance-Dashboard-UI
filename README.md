@@ -5,7 +5,8 @@
   <a href="https://velora-finance-dashboard-pi.vercel.app" target="_blank">
   <img src="https://img.shields.io/badge/Live-Demo-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
-
+  <br/>
+  <br/>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Recharts-00C4B4?style=for-the-badge" />
