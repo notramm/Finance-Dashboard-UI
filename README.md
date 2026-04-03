@@ -2,6 +2,10 @@
   <h1>Velora Finance Dashboard</h1>
   <p><strong>Elegant • Intelligent • Role-Based</strong> Personal Finance Dashboard</p>
 
+  <a href="https://velora-finance-dashboard-pi.vercel.app" target="_blank">
+  <img src="https://img.shields.io/badge/Live-Demo-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Recharts-00C4B4?style=for-the-badge" />
@@ -31,45 +35,45 @@ Designed with a strong focus on **UI/UX, performance, and real-world usability**
 
 ### 📊 Dashboard Insights
 
-* Real-time summary cards (Balance, Income, Expenses, Savings)
-* 6-month financial trend visualization
-* Category-wise spending breakdown
+- Real-time summary cards (Balance, Income, Expenses, Savings)
+- 6-month financial trend visualization
+- Category-wise spending breakdown
 
 ### 📁 Transaction Management
 
-* Smart search & filtering (type/category)
-* CSV export support
-* Clean tabular UI with sorting
+- Smart search & filtering (type/category)
+- CSV export support
+- Clean tabular UI with sorting
 
 ### 🔐 Role-Based Access
 
-* **Viewer** → Read-only dashboard
-* **Admin** → Full control (Add/Edit/Delete)
-* Instant UI updates on role switch
+- **Viewer** → Read-only dashboard
+- **Admin** → Full control (Add/Edit/Delete)
+- Instant UI updates on role switch
 
 ### 🧠 Smart Analytics
 
-* Top spending categories detection
-* Month-over-Month comparisons
-* Adaptive financial insights
+- Top spending categories detection
+- Month-over-Month comparisons
+- Adaptive financial insights
 
 ### 🎨 UI/UX Excellence
 
-* Dark / Light mode
-* Glassmorphism UI design
-* Fully responsive (Mobile → Desktop)
-* Smooth animations (Framer Motion)
+- Dark / Light mode
+- Glassmorphism UI design
+- Fully responsive (Mobile → Desktop)
+- Smooth animations (Framer Motion)
 
 ---
 
 ## 🛠 Tech Stack
 
-* **React** (Hooks + Context API)
-* **Tailwind CSS**
-* **Recharts**
-* **Framer Motion**
-* **Lucide React**
-* **date-fns**
+- **React** (Hooks + Context API)
+- **Tailwind CSS**
+- **Recharts**
+- **Framer Motion**
+- **Lucide React**
+- **date-fns**
 
 ---
 
@@ -97,8 +101,8 @@ npm run build
 
 Use the Navbar toggle to switch between:
 
-* 👁 Viewer Mode
-* ⚙️ Admin Mode
+- 👁 Viewer Mode
+- ⚙️ Admin Mode
 
 UI updates instantly based on permissions.
 
@@ -106,8 +110,8 @@ UI updates instantly based on permissions.
 
 ## 📊 Feature Coverage
 
-| Feature                                 | Status |
-| --------------------------------------- | ------ |
+| Feature                                 | Status  |
+| --------------------------------------- | ------- |
 | Dashboard Summary + Charts              | ✅ Done |
 | Donut Chart Visualization               | ✅ Done |
 | Transactions (Search + Filter + Export) | ✅ Done |
@@ -120,11 +124,11 @@ UI updates instantly based on permissions.
 
 ## 🌟 What Makes This Project Stand Out
 
-* Production-level UI/UX design
-* Clean and scalable component architecture
-* Real-world dashboard experience
-* Focus on performance + usability
-* Strong attention to detail (animations, states, edge cases)
+- Production-level UI/UX design
+- Clean and scalable component architecture
+- Real-world dashboard experience
+- Focus on performance + usability
+- Strong attention to detail (animations, states, edge cases)
 
 ---
 
